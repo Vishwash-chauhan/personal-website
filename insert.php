@@ -29,6 +29,8 @@ $sql = "INSERT INTO contacts (name, email, phone, message) VALUES ('$name', '$em
 
 if ($conn->query($sql) === TRUE) {
     echo "Data inserted successfully.";
+    header("Location: index.html");
+    exit; // Terminate the current script to ensure the redirection happens
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
